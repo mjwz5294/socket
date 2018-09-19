@@ -130,7 +130,7 @@ router.get('/performance.html',function(req,res,next){
 
 
 //首页
-router.get(['/','/index.html'], function(req, res, next) {
+router.get(['/index.html'], function(req, res, next) {
        if(req.session.name){
           return res.redirect('/warn.html');
        }else{
@@ -251,7 +251,7 @@ router.get('/logout.html',function(req,res,next){
 });
 
 //注册页面
-router.get('/users.html', function(req, res, next) {
+router.get(['/','/users.html'], function(req, res, next) {
      users.router(req, res, next);
 });
 

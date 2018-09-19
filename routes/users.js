@@ -46,6 +46,7 @@ module.exports = {
    },
    add:function(req, res, next){
 		var user = req.body.user;
+		// console.log(JSON.stringify(req.body));
 		if (!user) {
 			console.log(user)
 			return;
