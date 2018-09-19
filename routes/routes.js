@@ -12,6 +12,7 @@ var report = require('./report');
 var config = require('./config');
 var system = require('./system');
 var users = require('./users');
+var buglogs = require('./buglogs');
 var safe = require('./safe');
 
 /**
@@ -250,9 +251,14 @@ router.get('/logout.html',function(req,res,next){
      return res.redirect('/index.html'); 
 });
 
+//bug页面
+router.get(['/','/buglogs.html'], function(req, res, next) {
+     buglogs.router(req, res, next);
+});
+
 //注册页面
-router.get(['/','/users.html'], function(req, res, next) {
-     users.router(req, res, next);
+router.get('/users.html', function(req, res, next) {
+    users.router(req, res, next);
 });
 
 //修改数据
