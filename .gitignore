@@ -1,0 +1,10 @@
+node_modules/
+
+
+
+#git rm -r --cached dirname
+#git commit -m 'say something'
+#git push origin master
+.idea/crashnote.iml
+.idea/modules.xml
+.idea/workspace.xml
