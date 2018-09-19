@@ -1,3 +1,13 @@
+
+global.gLog = function() {
+    console.log.apply(this, arguments);
+}
+
+
+
+global.Config       = require('./Config.js')
+global.mgrMySQL    	= require('./mgrMySQL');
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');

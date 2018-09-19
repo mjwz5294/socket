@@ -256,6 +256,16 @@ router.get(['/','/buglogs.html'], function(req, res, next) {
      buglogs.router(req, res, next);
 });
 
+//保存bug
+router.post('/buglogs/add', function(req, res, next) {
+    buglogs.add(req, res, next);
+});
+
+//删除bug
+router.get('/buglogs/delete/:id', function(req, res, next) {
+    buglogs.delete(req, res, next);
+});
+
 //注册页面
 router.get('/users.html', function(req, res, next) {
     users.router(req, res, next);

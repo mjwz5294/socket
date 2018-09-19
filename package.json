@@ -19,6 +19,7 @@
     "mongodb": "^2.1.16",
     "mongoose": "^4.4.12",
     "morgan": "^1.5.3",
+    "mysql": "^2.16.0",
     "observe.js": "^0.1.1",
     "serve-favicon": "^2.2.1",
     "socket.io": "^1.7.4",
