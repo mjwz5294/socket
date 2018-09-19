@@ -1,5 +1,5 @@
 var mongoose = require('mongoose'),
-    DB_URL = 'mongodb://localhost:27017/mongoosesample';
+    DB_URL = 'mongodb://localhost:27017/socket';
 
 /**
  * 找不到bson的解决办法：
@@ -31,3 +31,30 @@ mongoose.connection.on('error',function (err) {
 mongoose.connection.on('disconnected', function () {
     console.log('Mongoose connection disconnected');
 });
+
+
+var Schema = mongoose.Schema;
+var userSchema = new Schema({
+    name     : String,
+    password : String
+})
+
+var Users = mongoose.model('users', userSchema);
+Users.findOne({name:'888'}).exec().then(function (value) {
+    if(value){
+        console.log('找到了！！！',value);
+    }else {
+        console.log('没找到888');
+    }
+
+});
+Users.findOne({name:'ReferenceError: Can\'t find variable: wxl'}).exec().then(function (value) {
+    if(value){
+        console.log('找到了！！！',value);
+    }else {
+        console.log('没找到：ReferenceError: Can\'t find variable: wxl');
+    }
+
+});
+
+// console.log(JSON.stringify(result));

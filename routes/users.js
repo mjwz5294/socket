@@ -51,15 +51,28 @@ module.exports = {
 			console.log(user)
 			return;
 		}
-		var user = new UsersModels(user);
-			//保存数据
-		user.save(function(err) {
-			if (err) {
-				console.log('保存失败')
-			}
-			console.log('数据保存成功')
-			return res.redirect('/users.html')
-		});   	
+
+		this.tmpuser = user;
+
+       UsersModels.findOne({name:user.name,password:user.password}).exec().then(function (value) {
+           if(value){
+               console.log('找到了！！！',value);
+           }else {
+               console.log('没找到',this.tmpuser.name);
+               var user = new UsersModels(this.tmpuser);
+               //保存数据
+               user.save(function(err) {
+                   if (err) {
+                       console.log('保存失败')
+                   }
+                   console.log('数据保存成功')
+                   return res.redirect('/users.html')
+               });
+           }
+
+       }.bind(this));
+
+
 	},
 	delete:function(req, res, next){
 		var id = req.params.id;
