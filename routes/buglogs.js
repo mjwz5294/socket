@@ -12,8 +12,13 @@ module.exports = {
     }
     ,
     add:function(req, res, next){
-        var user = req.body.buglog;
+        // var user = req.body.buglog;
         // console.log(JSON.stringify(req.body));
+
+        var user = {
+            bug_brief:req.body.bug_brief,
+            bug_detail:req.body.bug_detail,
+        };
 
         mgrMySQL.query('INSERT INTO buglogs SET ?', user, function (error, results, fields) {
             if (!error){
