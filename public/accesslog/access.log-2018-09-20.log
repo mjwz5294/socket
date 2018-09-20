@@ -1,0 +1,3 @@
+[2018-09-20 16:23:20.917] [INFO] access - ::1 - - "GET / HTTP/1.1" 304 - "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"
+[2018-09-20 16:23:25.109] [INFO] access - ::1 - - "GET /adsf HTTP/1.1" 404 1192 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"
+[2018-09-20 16:23:25.130] [INFO] access - ::1 - - "GET /style/images/bg_top.png HTTP/1.1" 404 1192 "http://localhost:30031/style/application-one.css?v=2016062901" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"
